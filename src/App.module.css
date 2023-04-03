@@ -1,3 +1,15 @@
-.app {
-    
+.container {
+    display: grid;
+    grid-template-areas: ". main main .";
+
+    align-items: center;
+    justify-items: center;
+
+    background-color: purple;
+}
+
+.main {
+    grid-area: main;
+    background-color: red;
+    width: 100%;
 }
