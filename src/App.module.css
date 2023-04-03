@@ -5,12 +5,12 @@
     align-items: center;
     justify-items: center;
 
-    background-color: purple;
+    /* background-color: purple; */
 }
 
 .main {
     grid-area: main;
-    background-color: red;
+    /* background-color: red; */
     width: 100%;
 }
 
@@ -25,4 +25,13 @@
 
 .inputAndButtonBox input {
     margin-right: 0.8rem;
+}
+
+.tasksInfo {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+
+    margin-bottom: 2.4rem;
 }

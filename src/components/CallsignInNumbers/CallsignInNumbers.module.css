@@ -1,0 +1,45 @@
+.callsignInNumbers {
+    display: flex;
+    flex-direction: row;
+}
+
+.callsignInNumbers p {
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+
+    margin-right: 0.8rem;
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.purple {
+    color: var(--purple);
+}
+
+
+
+.callsignInNumbers span {
+    display: flex;
+    place-items: center;
+
+    padding: 0.2rem 0.8rem;
+
+    width: 2.5rem;
+    height: 1.9rem;
+
+    color: var(--gray-200);
+
+    border-radius: 999px;
+    background-color: var(--gray-500);
+}
+
+.callsignInNumbers span p {
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+
+    color: var(--gray-200);
+}
