@@ -1,7 +1,11 @@
 import { Header } from "./components/Header/Header";
-import styles from "./App.module.css";
-import "./global.css";
 import { Input } from "./components/Input/Input";
+import { Button } from "./components/Button/Button";
+
+import "./global.css";
+import styles from "./App.module.css";
+
+import { PlusCircle } from "@phosphor-icons/react";
 
 export function App() {
   return (
@@ -9,7 +13,10 @@ export function App() {
       <Header />
       <div className={styles.container}>
         <div className={styles.main}>
-          <Input placeholder="Adicione uma nova tarefa" />
+          <div className={styles.inputAndButtonBox}>
+            <Input placeholder="Adicione uma nova tarefa" />
+            <Button text="Criar" ButtonIcon={PlusCircle} />
+          </div>
         </div>
       </div>
     </div>

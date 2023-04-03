@@ -13,3 +13,16 @@
     background-color: red;
     width: 100%;
 }
+
+.inputAndButtonBox {
+    display: flex;
+    flex-direction: row;
+
+    margin: -2.7rem 0 6.5rem;
+
+    align-items: center;
+}
+
+.inputAndButtonBox input {
+    margin-right: 0.8rem;
+}
