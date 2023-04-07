@@ -1,0 +1,39 @@
+.radio {
+    box-shadow: none;
+    border: transparent;
+    appearance: none;
+    width: 1.745rem;
+    height: 1.745rem;
+    margin: 0.327rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.unchecked {
+    border: 0.2rem solid var(--blue);
+    transition: 0.1s;
+}
+
+.unchecked:hover {
+    border-color: var(--blue-dark);
+    opacity: 0.8;
+    transition: 0.1s;
+}
+
+.checked {
+    background: var(--purple-dark);
+    transition: 0.1s;
+}
+
+.checked:hover {
+    background: var(--purple);
+    transition: 0.1s;
+}
+
+.checked::before {
+    content: url('../../assets/check.svg');
+    position: absolute;
+    margin-left: 0.4rem;
+    margin-top: -0.4rem;
+    cursor: pointer;
+}

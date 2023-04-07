@@ -1,0 +1,58 @@
+.task {
+    display: flex;
+
+    align-items: start;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 1.6rem;
+
+    margin-bottom: 1.2rem;
+
+    background: var(--gray-500);
+
+    position: initial;
+    border: 1px solid var(--gray-400);
+    border-radius: 8px;
+}
+
+.radioAndTaskTitle {
+    display: flex;
+    place-items: start;
+}
+
+.taskTitle {
+    display: inline;
+    margin-right: 1.2rem;
+    font-size: 1.4rem;
+    line-height: 140%;
+    
+}
+
+.normalTitle {
+    color: var(--gray-100);
+}
+
+.crossedOutTitle {
+    color: var(--gray-300);
+    text-decoration-line: line-through;
+    transition: 0.1s;
+}
+
+.radioAndTaskTitle input {
+    margin-right: 1.2rem;
+}
+
+.task > svg {
+    cursor: pointer;
+    color: var(--gray-300);
+    padding: 0.5rem 0.6rem;
+    box-sizing: content-box;
+}
+
+.task > svg:hover {
+    color: var(--danger);
+    background-color: var(--gray-400);
+    border-radius: 4px;
+}

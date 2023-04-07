@@ -19,8 +19,6 @@
     color: var(--purple);
 }
 
-
-
 .callsignInNumbers span {
     display: flex;
     place-items: center;

@@ -6,7 +6,7 @@ import "./global.css";
 import styles from "./App.module.css";
 
 import { PlusCircle } from "@phosphor-icons/react";
-import { CallsignInNumbers } from "./components/CallsignInNumbers/CallsignInNumbers";
+import { TasksContainer } from "./components/TasksContainer/TasksContainer";
 
 export function App() {
   return (
@@ -18,10 +18,7 @@ export function App() {
             <Input placeholder="Adicione uma nova tarefa" />
             <Button text="Criar" ButtonIcon={PlusCircle} />
           </div>
-          <div className={styles.tasksInfo}>
-            <CallsignInNumbers text="Tarefas criadas" textColor="blue" />
-            <CallsignInNumbers text="Concluídas" textColor="purple" />
-          </div>
+          <TasksContainer />
         </div>
       </div>
     </div>
