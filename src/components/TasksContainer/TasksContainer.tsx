@@ -50,6 +50,11 @@ export function TasksContainer() {
     setTasks(newTaskArray);
   }
 
+  const deleteTask = (id: string) => {
+    const newTaskArray = tasks.filter((task) => task.id !== id);
+    setTasks(newTaskArray);
+  };
+
   const completedTasksNumber = tasks.reduce(
     (completedTasksNumber, currentTask) => {
       return currentTask.isCompleted
@@ -82,6 +87,7 @@ export function TasksContainer() {
                 key={task.id}
                 task={task}
                 onChangeTaskStatus={changeTaskStatus}
+                onDeleteTask={deleteTask}
               />
             );
           })}

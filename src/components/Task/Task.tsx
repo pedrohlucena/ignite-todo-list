@@ -6,15 +6,18 @@ import { TaskData } from "../TasksContainer/TasksContainer";
 interface TaskProps {
   task: TaskData;
   onChangeTaskStatus: (id: string) => void;
+  onDeleteTask: (id: string) => void;
 }
 
-export function Task({ task, onChangeTaskStatus }: TaskProps) {
+export function Task({ task, onChangeTaskStatus, onDeleteTask }: TaskProps) {
   const { id, title, isCompleted } = task;
 
   const titleClasses = [
     styles.taskTitle,
     isCompleted ? styles.crossedOutTitle : styles.normalTitle,
   ].join(" ");
+
+  const handleDeleteTask = () => onDeleteTask(id);
 
   return (
     <div className={styles.task}>
@@ -26,7 +29,7 @@ export function Task({ task, onChangeTaskStatus }: TaskProps) {
         />
         <p className={titleClasses}>{title}</p>
       </div>
-      <Trash size={14} />
+      <Trash size={14} onClick={handleDeleteTask} />
     </div>
   );
 }
