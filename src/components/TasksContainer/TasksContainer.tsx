@@ -50,6 +50,15 @@ export function TasksContainer() {
     setTasks(newTaskArray);
   }
 
+  const completedTasksNumber = tasks.reduce(
+    (completedTasksNumber, currentTask) => {
+      return currentTask.isCompleted
+        ? completedTasksNumber + 1
+        : completedTasksNumber;
+    },
+    0
+  );
+
   return (
     <main>
       <header className={styles.tasksInfo}>
@@ -58,7 +67,11 @@ export function TasksContainer() {
           textColor="blue"
           indicativeNumber={tasks.length}
         />
-        <XOfYCallsignInNumbers text="Concluídas" indicativeNumber={2} />
+        <XOfYCallsignInNumbers
+          text="Concluídas"
+          indicativeNumber={completedTasksNumber}
+          totalNumber={tasks.length}
+        />
       </header>
 
       {tasks.length ? (
