@@ -1,5 +1,4 @@
 .radio {
-    box-shadow: none;
     border: transparent;
     appearance: none;
     width: 1.745rem;
@@ -10,7 +9,11 @@
     flex-shrink: 0;
 }
 
-.unchecked {
+.radio:focus {
+    box-shadow: none;
+}
+
+.unchecked {   
     border: 0.2rem solid var(--blue);
     transition: 0.1s;
 }
