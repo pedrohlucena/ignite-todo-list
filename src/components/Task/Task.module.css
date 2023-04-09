@@ -48,6 +48,7 @@
     color: var(--gray-300);
     padding: 0.5rem 0.6rem;
     box-sizing: content-box;
+    flex-shrink: 0;
 }
 
 .task > svg:hover {
