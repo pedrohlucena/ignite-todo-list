@@ -1,0 +1,12 @@
+.taskForm {
+    display: flex;
+    flex-direction: row;
+
+    margin: -2.7rem 0 6.5rem;
+
+    align-items: center;
+}
+
+.taskForm input {
+    margin-right: 0.8rem;
+}
