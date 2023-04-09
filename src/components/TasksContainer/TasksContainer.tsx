@@ -1,5 +1,3 @@
-import { v4 as uuidv4 } from "uuid";
-
 import styles from "./TasksContainer.module.css";
 import clipboardImg from "../../assets/clipboard.svg";
 
@@ -7,16 +5,15 @@ import { CallsignInNumbers } from "../CallsignInNumbers/CallsignInNumbers";
 import { Task, TaskData } from "../Task/Task";
 
 import { XOfYCallsignInNumbers } from "../XOfYCallsignInNumbers/XOfYCallsignInNumbers";
+import { setTasksCallbackType } from "../../App";
 
 interface TasksContainerProps {
   tasks: TaskData[];
-  onSetTasks: (newTasksArray: TaskData[]) => void;
+  onSetTasks: setTasksCallbackType;
 }
 
 export function TasksContainer({ tasks, onSetTasks }: TasksContainerProps) {
-  // const tasks: Task[] = [];
-
-  function changeTaskStatus(id: string) {
+  function handleTaskStatusChange(id: string) {
     const newTaskArray = tasks.map((task) => {
       if (task.id === id) {
         return {
@@ -66,7 +63,7 @@ export function TasksContainer({ tasks, onSetTasks }: TasksContainerProps) {
               <Task
                 key={task.id}
                 task={task}
-                onChangeTaskStatus={changeTaskStatus}
+                onChangeTaskStatus={handleTaskStatusChange}
                 onDeleteTask={handleDeleteTask}
               />
             );
