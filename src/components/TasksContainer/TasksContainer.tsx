@@ -7,6 +7,7 @@ import { CallsignInNumbers } from "../CallsignInNumbers/CallsignInNumbers";
 import { Task } from "../Task/Task";
 
 import { useState } from "react";
+import { XOfYCallsignInNumbers } from "../XOfYCallsignInNumbers/XOfYCallsignInNumbers";
 
 export interface TaskData {
   id: string;
@@ -57,11 +58,7 @@ export function TasksContainer() {
           textColor="blue"
           indicativeNumber={tasks.length}
         />
-        <CallsignInNumbers
-          text="Concluídas"
-          textColor="purple"
-          indicativeNumber={0}
-        />
+        <XOfYCallsignInNumbers text="Concluídas" indicativeNumber={2} />
       </header>
 
       {tasks.length ? (

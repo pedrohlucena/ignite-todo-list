@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./CallsignInNumbers.module.css";
 
 interface CallsignInNumbersProps {
