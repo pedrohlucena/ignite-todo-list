@@ -1,6 +1,12 @@
 import { v4 as uuidv4 } from "uuid";
 
-import { ChangeEvent, FormEvent, FormHTMLAttributes, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  FormHTMLAttributes,
+  InvalidEvent,
+  useState,
+} from "react";
 import styles from "./TaskForm.module.css";
 import { TaskData } from "../Task/Task";
 import { PlusCircle } from "@phosphor-icons/react";
@@ -34,12 +40,18 @@ export function TaskForm({ tasks, onSetTasks, ...props }: TaskFormProps) {
     setNewTaskText("");
   }
 
+  function handleNewTaskInvalid(event: InvalidEvent<HTMLInputElement>) {
+    event.target.setCustomValidity("Esse campo é obrigatório!");
+  }
+
   return (
     <form onSubmit={handleCreateTask} className={styles.taskForm} {...props}>
       <Input
         placeholder="Adicione uma nova tarefa"
         value={newTaskText}
         onChange={handleNewTaskChange}
+        onInvalid={handleNewTaskInvalid}
+        required
       />
       <Button
         text="Criar"
