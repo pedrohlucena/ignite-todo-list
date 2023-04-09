@@ -4,8 +4,9 @@ import styles from "./TasksContainer.module.css";
 import clipboardImg from "../../assets/clipboard.svg";
 
 import { CallsignInNumbers } from "../CallsignInNumbers/CallsignInNumbers";
-import { useState } from "react";
 import { Task } from "../Task/Task";
+
+import { useState } from "react";
 
 export interface TaskData {
   id: string;
@@ -20,7 +21,7 @@ export function TasksContainer() {
       id: uuidv4(),
       title:
         "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
-      isCompleted: true,
+      isCompleted: false,
     },
     {
       id: uuidv4(),
@@ -51,8 +52,16 @@ export function TasksContainer() {
   return (
     <main>
       <header className={styles.tasksInfo}>
-        <CallsignInNumbers text="Tarefas criadas" textColor="blue" />
-        <CallsignInNumbers text="Concluídas" textColor="purple" />
+        <CallsignInNumbers
+          text="Tarefas criadas"
+          textColor="blue"
+          indicativeNumber={tasks.length}
+        />
+        <CallsignInNumbers
+          text="Concluídas"
+          textColor="purple"
+          indicativeNumber={0}
+        />
       </header>
 
       {tasks.length ? (
