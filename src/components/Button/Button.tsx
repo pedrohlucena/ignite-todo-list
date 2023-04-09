@@ -7,9 +7,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   ButtonIcon: Icon;
 }
 
-export function Button({ text, ButtonIcon }: ButtonProps) {
+export function Button({ text, ButtonIcon, ...props }: ButtonProps) {
   return (
-    <button className={styles.button}>
+    <button className={styles.button} {...props}>
       <p>{text}</p>
       <ButtonIcon size={16} />
     </button>

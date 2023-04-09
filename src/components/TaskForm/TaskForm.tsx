@@ -44,6 +44,8 @@ export function TaskForm({ tasks, onSetTasks, ...props }: TaskFormProps) {
     event.target.setCustomValidity("Esse campo é obrigatório!");
   }
 
+  const isNewTaskEmpty = newTaskText.length === 0;
+
   return (
     <form onSubmit={handleCreateTask} className={styles.taskForm} {...props}>
       <Input
@@ -58,6 +60,7 @@ export function TaskForm({ tasks, onSetTasks, ...props }: TaskFormProps) {
         type="submit"
         ButtonIcon={PlusCircle}
         onClick={handleCreateTask}
+        disabled={isNewTaskEmpty}
       />
     </form>
   );
