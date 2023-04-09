@@ -1,7 +1,8 @@
 import { Icon } from "@phosphor-icons/react";
 import styles from "./Button.module.css";
+import { ButtonHTMLAttributes } from "react";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   ButtonIcon: Icon;
 }

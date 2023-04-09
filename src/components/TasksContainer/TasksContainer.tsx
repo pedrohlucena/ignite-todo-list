@@ -4,37 +4,17 @@ import styles from "./TasksContainer.module.css";
 import clipboardImg from "../../assets/clipboard.svg";
 
 import { CallsignInNumbers } from "../CallsignInNumbers/CallsignInNumbers";
-import { Task } from "../Task/Task";
+import { Task, TaskData } from "../Task/Task";
 
-import { useState } from "react";
 import { XOfYCallsignInNumbers } from "../XOfYCallsignInNumbers/XOfYCallsignInNumbers";
 
-export interface TaskData {
-  id: string;
-  title: string;
-  isCompleted: boolean;
+interface TasksContainerProps {
+  tasks: TaskData[];
+  onSetTasks: (newTasksArray: TaskData[]) => void;
 }
 
-export function TasksContainer() {
+export function TasksContainer({ tasks, onSetTasks }: TasksContainerProps) {
   // const tasks: Task[] = [];
-  const [tasks, setTasks] = useState<TaskData[]>([
-    {
-      id: uuidv4(),
-      title:
-        "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
-      isCompleted: false,
-    },
-    {
-      id: uuidv4(),
-      title: 'Terminar o projeto "Ignite Feed"',
-      isCompleted: true,
-    },
-    {
-      id: uuidv4(),
-      title: 'Terminar o projeto "ToDo List"',
-      isCompleted: false,
-    },
-  ]);
 
   function changeTaskStatus(id: string) {
     const newTaskArray = tasks.map((task) => {
@@ -47,12 +27,12 @@ export function TasksContainer() {
       return task;
     });
 
-    setTasks(newTaskArray);
+    onSetTasks(newTaskArray);
   }
 
-  const deleteTask = (id: string) => {
+  const handleDeleteTask = (id: string) => {
     const newTaskArray = tasks.filter((task) => task.id !== id);
-    setTasks(newTaskArray);
+    onSetTasks(newTaskArray);
   };
 
   const completedTasksNumber = tasks.reduce(
@@ -87,7 +67,7 @@ export function TasksContainer() {
                 key={task.id}
                 task={task}
                 onChangeTaskStatus={changeTaskStatus}
-                onDeleteTask={deleteTask}
+                onDeleteTask={handleDeleteTask}
               />
             );
           })}

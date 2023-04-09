@@ -14,7 +14,7 @@
     width: 100%;
 }
 
-.inputAndButtonBox {
+.taskForm {
     display: flex;
     flex-direction: row;
 
@@ -23,6 +23,6 @@
     align-items: center;
 }
 
-.inputAndButtonBox input {
+.taskForm input {
     margin-right: 0.8rem;
 }

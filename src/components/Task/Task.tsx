@@ -1,7 +1,12 @@
 import { Trash } from "@phosphor-icons/react";
 import styles from "./Task.module.css";
 import { Radio } from "../Radio/Radio";
-import { TaskData } from "../TasksContainer/TasksContainer";
+
+export interface TaskData {
+  id: string;
+  title: string;
+  isCompleted: boolean;
+}
 
 interface TaskProps {
   task: TaskData;
